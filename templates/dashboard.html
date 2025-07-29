@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <h1>Welcome, {{ current_user.username }}!</h1>
+    <a href="/logout">Logout</a>
+    <h2>Summarize Text</h2>
+    <form action="/summarize" method="POST">
+        <textarea name="text" placeholder="Enter long text..." required></textarea>
+        <button type="submit">Summarize</button>
+    </form>
+    <h3>History</h3>
+    <ul>
+        {% for summary in summaries %}
+        <li><strong>Summary:</strong> {{ summary.summary }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
