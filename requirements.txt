@@ -4,3 +4,4 @@ Flask-SQLAlchemy
 Flask-Limiter
 transformers
 torch
+gunicorn
